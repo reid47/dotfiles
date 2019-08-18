@@ -1,0 +1,8 @@
+node_modules
+
+# Coc
+/nvim/coc/*
+!/nvim/coc/extensions
+/nvim/coc/extensions/*
+!/nvim/coc/extensions/package.json
+!/nvim/coc/extensions/package-lock.json

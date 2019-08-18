@@ -1,0 +1,11 @@
+[user]
+  name = Reid Mitchell
+  email = reidmitchell1@gmail.com
+
+[alias]
+  ci = commit
+  co = checkout
+  st = status
+
+[core]
+  editor = nvim
