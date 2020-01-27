@@ -99,8 +99,17 @@ Plug 'junegunn/fzf'
 " TypeScript syntax higlighting
 Plug 'leafgarland/typescript-vim'
 
+" Fish shell language support
+Plug 'dag/vim-fish'
+
+" Applescript language support
+Plug 'vim-scripts/applescript.vim'
+
 " Git integration
 Plug 'airblade/vim-gitgutter'
+
+" Navigation between Vim and Tmux
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
