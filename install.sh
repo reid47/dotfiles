@@ -26,6 +26,7 @@ ln -sfv $dir/.bash_profile $HOME/.bash_profile
 ln -sfv $dir/.gitconfig $HOME/.gitconfig
 ln -sfv $dir/.tmux.conf $HOME/.tmux.conf
 ln -sfv $dir/nvim/ $HOME/.config
+ln -sfv $dir/fish/ $HOME/.config
 
 log "Installing vim plugins..."
 vim +UpdateAllPlugins +qall
