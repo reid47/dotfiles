@@ -12,6 +12,7 @@ alias vim="nvim"
 PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 PATH="$HOME/.cargo/bin:$PATH"
+PATH="$PATH:/usr/local/mysql/bin"
 export PATH
 
 # Prompt:
