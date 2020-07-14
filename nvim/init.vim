@@ -27,8 +27,90 @@ set clipboard+=unnamedplus " Use system clipboard
 set ignorecase
 set smartcase
 
+set fillchars+=vert:\│ " Char for vertical split column (does this work??)
+
+" Plugin setup {{{
+
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Adds language server support
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" Adds commands for working with surrounding characters
+Plug 'tpope/vim-surround'
+
+" Enhances file tree (netrw)
+Plug 'tpope/vim-vinegar'
+
+" Helpers for finding/replacing patterns
+Plug 'tpope/vim-abolish'
+
+" Fuzzy file searching
+Plug 'junegunn/fzf'
+
+" TypeScript syntax higlighting
+Plug 'leafgarland/typescript-vim'
+
+" Fish shell language support
+Plug 'dag/vim-fish'
+
+" Applescript language support
+Plug 'vim-scripts/applescript.vim'
+
+" Git integration
+Plug 'airblade/vim-gitgutter'
+
+" Navigation between Vim and Tmux
+Plug 'christoomey/vim-tmux-navigator'
+
+" Send commands to Tmux from Vim
+Plug 'benmills/vimux'
+
+" A bunch of color schemes
+Plug 'chriskempson/base16-vim'
+
+call plug#end()
+
+" Update plugins
+
+fun! s:UpdateAllPlugins()
+  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    echo 'Installing plugins...'
+    PlugInstall --sync | q
+  else
+    echo 'Updating plugins...'
+    PlugUpdate --sync | q
+  endif
+
+  CocInstall coc-css
+  CocInstall coc-eslint
+  CocInstall coc-html
+  CocInstall coc-json
+  CocInstall coc-python
+  CocInstall coc-rls
+  CocInstall coc-solargraph
+  CocInstall coc-stylelint
+  CocInstall coc-tslint
+  CocInstall coc-tsserver
+  CocInstall coc-vetur
+  CocInstall coc-prettier
+endfun
+
+" Register as command
+command! UpdateAllPlugins call s:UpdateAllPlugins()
+
+" }}}
+
 syntax enable
-colorscheme reid
+
+" Syntax higlighting
+colorscheme base16-onedark
+source ~/.config/nvim/colors/reid.vim
 
 " Show cursor line in active buffer
 augroup CursorLine
@@ -75,83 +157,11 @@ command! SyntaxGroup call GetSyntaxGroup()
 " running tmux commands
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vz :VimuxZoomRunner<CR>
+let g:VimuxPromptString = "command: "
 
-" ctrl+b to toggle file navigator pane
-nnoremap <C-b> :Lexplore<CR>
-
-" }}}
-
-" Plugin setup {{{
-
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Adds language server support
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Adds commands for working with surrounding characters
-Plug 'tpope/vim-surround'
-
-" Enhances file tree (netrw)
-Plug 'tpope/vim-vinegar'
-
-" Helpers for finding/replacing patterns
-Plug 'tpope/vim-abolish'
-
-" Fuzzy file searching
-Plug 'junegunn/fzf'
-
-" TypeScript syntax higlighting
-Plug 'leafgarland/typescript-vim'
-
-" Fish shell language support
-Plug 'dag/vim-fish'
-
-" Applescript language support
-Plug 'vim-scripts/applescript.vim'
-
-" Git integration
-Plug 'airblade/vim-gitgutter'
-
-" Navigation between Vim and Tmux
-Plug 'christoomey/vim-tmux-navigator'
-
-" Send commands to Tmux from Vim
-Plug 'benmills/vimux'
-
-call plug#end()
-
-" Update plugins
-
-fun! s:UpdateAllPlugins()
-  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    echo 'Installing plugins...'
-    PlugInstall --sync | q
-  else
-    echo 'Updating plugins...'
-    PlugUpdate --sync | q
-  endif
-
-  CocInstall coc-css
-  CocInstall coc-eslint
-  CocInstall coc-html
-  CocInstall coc-json
-  CocInstall coc-python
-  CocInstall coc-rls
-  CocInstall coc-solargraph
-  CocInstall coc-stylelint
-  CocInstall coc-tslint
-  CocInstall coc-tsserver
-  CocInstall coc-vetur
-  CocInstall coc-prettier
-endfun
-
-" Register as command
-command! UpdateAllPlugins call s:UpdateAllPlugins()
+" escape to clear search highlight
+nnoremap <esc> :noh<return><esc>
 
 " }}}
 
@@ -228,7 +238,7 @@ fun! BuildStatusLine()
   let s .= ' %{g:statusline_modes[mode()]} '
   let s .= ' %f'
   let s .= '%='
-  let s .= '%y %l:%c'
+  let s .= ' %l:%c'
 
   return s
 endfun
