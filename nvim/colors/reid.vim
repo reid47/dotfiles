@@ -101,7 +101,8 @@ call s:Hi("DiffChange", s:yellow, s:off, s:bold)
 call s:Hi("DiffText", s:off, s:yellow, s:bold)
 
 " File explorer
-call s:Hi("Directory", s:purple, s:off, s:off)
+call s:Hi("Directory", s:blue, s:off, s:off)
+call s:Hi("netrwClassify", s:yellow, s:off, s:off)
 
 call s:Hi("Folded", s:dark_gray, s:off, s:bold_italic)
 

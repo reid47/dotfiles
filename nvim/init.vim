@@ -59,8 +59,10 @@ inoremap jj <Esc>`^
 " ctrl+p to open fuzzy file search
 nnoremap <C-p> :FZF<CR>
 
-" ReloadConfig: reload nvim config
-command! ReloadConfig :source $MYVIMRC
+" ConfigReload: reload nvim config
+command! ConfigReload :source $MYVIMRC
+" ConfigEdit: edit nvim config
+command! ConfigEdit :edit $MYVIMRC
 
 fun! GetSyntaxGroup()
   let l:s = synID(line('.'), col('.'), 1)
@@ -69,6 +71,13 @@ endfun
 
 " SyntaxGroup: print the syntax highlight group of the element under the cursor
 command! SyntaxGroup call GetSyntaxGroup()
+
+" running tmux commands
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" ctrl+b to toggle file navigator pane
+nnoremap <C-b> :Lexplore<CR>
 
 " }}}
 
@@ -111,6 +120,9 @@ Plug 'airblade/vim-gitgutter'
 " Navigation between Vim and Tmux
 Plug 'christoomey/vim-tmux-navigator'
 
+" Send commands to Tmux from Vim
+Plug 'benmills/vimux'
+
 call plug#end()
 
 " Update plugins
@@ -124,13 +136,18 @@ fun! s:UpdateAllPlugins()
     PlugUpdate --sync | q
   endif
 
-  CocInstall --sync \
-    'coc-css' \
-    'coc-html' \
-    'coc-json' \
-    'coc-rls' \
-    'coc-tsserver' \
-    'coc-xml'
+  CocInstall coc-css
+  CocInstall coc-eslint
+  CocInstall coc-html
+  CocInstall coc-json
+  CocInstall coc-python
+  CocInstall coc-rls
+  CocInstall coc-solargraph
+  CocInstall coc-stylelint
+  CocInstall coc-tslint
+  CocInstall coc-tsserver
+  CocInstall coc-vetur
+  CocInstall coc-prettier
 endfun
 
 " Register as command
@@ -149,6 +166,10 @@ augroup END
 
 fun! s:AutoSave()
   if &ft =~ 'gitcommit'
+    return
+  endif
+
+  if bufname() == ""
     return
   endif
 
@@ -245,6 +266,15 @@ endfun
 
 " }}}
 
+" Terminal {{{
+
+augroup config#terminal
+  au!
+  au TermOpen * setlocal nonumber norelativenumber
+augroup END
+
+" }
+
 " Language: Markdown {{{
 
 augroup config#markdown
@@ -267,6 +297,18 @@ augroup config#go
     \ shiftwidth=4
     \ softtabstop=4
     \ tabstop=4
+augroup END
+
+" }}}
+
+" Language: Rust {{{
+
+augroup config#rust
+  au!
+  au FileType rust setlocal
+    \ shiftwidth=2
+    \ softtabstop=2
+    \ tabstop=2
 augroup END
 
 " }}}
@@ -325,5 +367,31 @@ let g:fzf_colors = {
   \ }
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" }}}
+
+" coc.nvim {{{
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+nmap <leader>rn <Plug>(coc-rename)
+
+command! -nargs=0 Format :call CocActionAsync('format')
+nmap <leader>f <Plug>(coc-format)
 
 " }}}

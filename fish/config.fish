@@ -17,6 +17,8 @@ set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $PATH /usr/local/mysql/bin
 set -gx PATH $PATH /usr/local/go/bin $GOPATH/bin
+set -gx PATH $PATH $HOME/.cabal/bin
+set -gx PATH $PATH $HOME/.ghcup/bin
 
 # Remove default greeting
 set -gx fish_greeting ""
