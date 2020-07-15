@@ -26,6 +26,7 @@ endfunc
 
 " Primary foreground/background (if off, uses terminal settings)
 call s:Hi("Normal", s:white, s:off, s:off)
+call s:Hi("NormalFloat", s:white, s:light_gray, s:off)
 " call s:Hi("NormalNC", s:white, s:light_gray, s:off)
 
 " Applies to buffer below text (after numbered lines)
@@ -62,8 +63,9 @@ call s:Hi("StatusLine", s:white, s:light_gray, s:bold)
 call s:Hi("StatusLineMode", s:white, s:light_gray, s:bold)
 call s:Hi("StatusLineNC", s:dark_gray, s:light_gray, s:off)
 
-call s:Hi("Pmenu", s:off, s:off, s:off)
-call s:Hi("PmenuSel", s:off, s:light_gray, s:off)
+" Pop-up menus
+call s:Hi("Pmenu", s:white, s:light_gray, s:off)
+call s:Hi("PmenuSel", s:white, s:dark_gray, s:bold)
 
 " Search
 call s:Hi("IncSearch", s:light_gray, s:orange, s:off)
