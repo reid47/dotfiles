@@ -5,6 +5,9 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
+" Make floating window span across panes
+let g:clap_layout = { 'relative': 'editor' }
+
 " Statusline {{{
 
 set laststatus=2

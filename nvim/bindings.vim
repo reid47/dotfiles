@@ -48,7 +48,7 @@ let g:leader_key_map.r = {
 
 let g:leader_key_map.r.c = [':VimuxPromptCommand', 'Run a new command']
 
-let g:leader_key_map.r.r = [':VimuxRunLastCommand', 'Re-run last command']
+let g:leader_key_map.r['.'] = [':VimuxRunLastCommand', 'Re-run last command']
 
 " }}}
 

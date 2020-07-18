@@ -40,6 +40,9 @@ Plug 'chriskempson/base16-vim'
 " Provides help menu for shortcut keys
 Plug 'liuchengxu/vim-which-key'
 
+" Highlight yanked text briefly
+Plug 'machakann/vim-highlightedyank'
+
 " TypeScript syntax highlighting
 Plug 'leafgarland/typescript-vim'
 
@@ -49,10 +52,12 @@ Plug 'dag/vim-fish'
 " Applescript language support
 Plug 'vim-scripts/applescript.vim'
 
+" TOML language support
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 " Update plugins
-
 fun! s:UpdateAllPlugins()
   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     echo 'Installing plugins...'

@@ -22,6 +22,7 @@ set termguicolors          " Enable true colors in terminal
 set updatetime=100         " 100ms (recommended for GitGutter plugin)
 set clipboard+=unnamedplus " Use system clipboard
 set timeoutlen=750         " Idle timeout (e.g. time before leader menu appears)
+set inccommand=nosplit     " Show preview of command (e.g. s/a/b) while typing
 
 set ignorecase
 set smartcase
