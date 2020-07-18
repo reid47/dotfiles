@@ -31,6 +31,13 @@ omap <c-_> <Plug>Commentary
 nmap <c-_> <Plug>CommentaryLine
 let g:leader_key_map.c['/'] = ['<c-_>', 'Comment/uncomment']
 
+" Hover
+let g:leader_key_map.c.c = [":call CocActionAsync('doHover')", 'Hover']
+
+" Go to definition
+nmap <silent> gd <Plug>(coc-definition)
+let g:leader_key_map.c.d = ["<Plug>(coc-definition)", 'Go to definition']
+
 " Rename symbol
 let g:leader_key_map.c.n = ['<Plug>(coc-rename)', 'Rename symbol']
 
