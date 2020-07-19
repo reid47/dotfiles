@@ -31,9 +31,6 @@ Plug 'tpope/vim-eunuch'
 " Git integration
 Plug 'airblade/vim-gitgutter'
 
-" Navigation between Vim and Tmux
-Plug 'christoomey/vim-tmux-navigator'
-
 " A bunch of color schemes
 Plug 'chriskempson/base16-vim'
 
