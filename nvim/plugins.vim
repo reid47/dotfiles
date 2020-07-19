@@ -38,9 +38,6 @@ let g:gitgutter_sign_removed = '▁'
 let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '┃'
 
-" A bunch of color schemes
-" Plug 'chriskempson/base16-vim'
-
 " Provides help menu for shortcut keys
 Plug 'liuchengxu/vim-which-key'
 
