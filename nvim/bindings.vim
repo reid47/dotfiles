@@ -74,6 +74,8 @@ let g:leader_key_map.f.h = [':Clap history', 'find in file history']
 
 let g:leader_key_map.f.s = [':Clap grep', 'find in files']
 
+let g:leader_key_map.f.y = [':Clap yanks', 'find in yanks']
+
 " }}}
 
 " Group: git {{{

@@ -75,6 +75,10 @@ highlight_dark({
   IncSearch = { fg = gray, bg = orange },
   Search = { fg = gray, bg = yellow },
 
+  -- Code examples in :help
+  helpCommand = { fg = purple },
+  helpExample = { fg = orange },
+
   -- Spell-checking
   SpellBad = { style = underline },
 

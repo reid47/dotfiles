@@ -13,6 +13,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Fuzzy-find in floating window
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 let g:clap_layout = { 'relative': 'editor' }
+let g:clap_prompt_format = '  %provider_id%: '
 let g:clap_disable_run_rooter = v:true
 let g:clap_no_matches_msg = 'No matches.'
 let g:clap_selected_sign = { 'text': '*', 'texthl': 'ClapSelectedSign', 'linehl': 'ClapSelected' }
