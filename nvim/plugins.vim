@@ -12,6 +12,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Fuzzy-find in floating window
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+let g:clap_layout = { 'relative': 'editor' }
 
 " Adds commands for working with surrounding characters
 Plug 'tpope/vim-surround'
@@ -38,7 +39,7 @@ let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '┃'
 
 " A bunch of color schemes
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 
 " Provides help menu for shortcut keys
 Plug 'liuchengxu/vim-which-key'

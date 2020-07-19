@@ -29,11 +29,6 @@ set smartcase
 
 set fillchars+=vert:\│ " Char for vertical split column (does this work??)
 
-" Syntax higlighting
-syntax enable
-colorscheme base16-onedark
-source ~/.config/nvim/colors/reid.vim
-
 autocmd InsertLeave * set nopaste " see: https://github.com/neovim/neovim/issues/7994
 
 " File explorer (netrw)
