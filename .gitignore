@@ -1,6 +1,8 @@
 node_modules
 ignored
 
+.DS_Store
+
 # Coc
 /nvim/coc/*
 !/nvim/coc/extensions

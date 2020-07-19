@@ -107,6 +107,5 @@ call s:Hi("Folded", s:dark_gray, s:off, s:bold_italic)
 
 " Comments
 call s:Hi("Comment", s:dark_gray, s:off, s:off)
-call s:Hi("Todo", s:dark_gray, s:green, s:bold)
-
+call s:Hi("Todo", s:green, s:off, s:bold)
 

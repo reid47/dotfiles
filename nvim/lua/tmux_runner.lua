@@ -5,11 +5,13 @@ local last_command = nil
 local function escape(str)
   return api.nvim_call_function('shellescape', { str })
 end
+
 local function send_keys(keys)
   api.nvim_call_function('system', {
     'tmux send-keys -t ' .. pane_index .. ' ' .. keys
   })
 end
+
 local function find_pane()
   if pane_index then return true end
 
@@ -23,10 +25,6 @@ local function find_pane()
       return true
     end
   end
-
-  -- 4
-  -- 464
-  -- 2340-5-043
 
   api.nvim_err_writeln("No tmux pane detected")
   return false

@@ -30,10 +30,11 @@ Plug 'tpope/vim-eunuch'
 
 " Git integration
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_map_keys = 0
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
-let g:gitgutter_sign_removed = '┃'
-let g:gitgutter_sign_removed_first_line = '┃'
+let g:gitgutter_sign_removed = '▁'
+let g:gitgutter_sign_removed_first_line = '▔'
 let g:gitgutter_sign_modified_removed = '┃'
 
 " A bunch of color schemes
@@ -44,6 +45,7 @@ Plug 'liuchengxu/vim-which-key'
 
 " Highlight yanked text briefly
 Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 300
 
 " TypeScript syntax highlighting
 Plug 'leafgarland/typescript-vim'
