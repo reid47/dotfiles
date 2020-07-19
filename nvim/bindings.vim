@@ -80,3 +80,13 @@ let g:leader_key_map.f.h = [':Clap history', 'Find in file history']
 let g:leader_key_map.f.s = [':Clap grep', 'Find in files']
 
 " }}}
+
+" Group: vim config {{{
+
+let g:leader_key_map.v = {
+      \ 'name': 'vim',
+      \}
+
+let g:leader_key_map.v.r = [':ReloadConfig', 'Reload vim config']
+
+" }}}
