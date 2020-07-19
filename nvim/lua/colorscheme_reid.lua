@@ -12,15 +12,14 @@ local light_gray = '#75718e'
 local lighter_gray = '#abb2bf'
 local white = '#f8f8f8'
 local teal = '#66c6d2'
-local yellow = '#ffffb3'
 local purple = '#c688cd'
 local red = '#eb7062'
 local light_red = '#f07c85'
 local blue = '#61afef'
 local orange = '#d19a66'
 local light_orange = '#e5c07b'
-local green = '#98d389'
-local yellow = '#f3fe39'
+local green = '#c8e369'
+local yellow = '#e3ee29'
 
 highlight_dark({
   -- Primary foreground/background (if unset, uses terminal settings)
@@ -36,7 +35,7 @@ highlight_dark({
 
   -- Messages, etc.
   ErrorMsg = { fg = red },
-  WarningMsg = { fg = orange },
+  WarningMsg = { fg = light_orange },
   MoreMsg = { fg = green, style = bold },
   Question = { fg = blue, style = bold },
 
@@ -92,8 +91,10 @@ highlight_dark({
 
   -- Diffs & Git markers
   DiffAdd = { fg = green, style = bold },
+  diffAdded = { fg = green },
   DiffDelete = { fg = red, style = bold },
-  DiffChange = { fg = yellow, style = bold },
+  diffRemoved = { fg = red },
+  DiffChange = { fg = orange, style = bold },
   DiffText = { bg = yellow, style = bold },
   GitGutterAdd = { fg = green, style = bold },
   GitGutterChange = { fg = orange },
@@ -110,7 +111,24 @@ highlight_dark({
   Folded = { fg = light_gray, style = bold_italic },
 
   -- Clap (fuzzy finder window)
-  ClapDefaultCurrentSelection = { fg = white, style = bold },
+  ClapPreview = { bg = gray },
+  ClapSpinner = { fg = blue, style = bold },
+  ClapCurrentSelectionSign = { fg = orange, style = bold },
+  ClapCurrentSelection = { fg = white, style = bold },
+  ClapSelected = { fg = white },
+  ClapFuzzyMatches = { fg = light_orange, style = bold },
+  ClapFuzzyMatches1 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches2 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches3 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches4 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches5 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches6 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches7 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches8 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches9 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches10 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches11 = { fg = light_orange, style = bold },
+  ClapFuzzyMatches12 = { fg = light_orange, style = bold },
 
   -- Syntax
   Conditional = { fg = purple },

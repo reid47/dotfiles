@@ -21,72 +21,75 @@ vnoremap <S-Tab> <gv
 
 " Group: code actions {{{
 
-let g:leader_key_map.c = {
-      \ 'name': 'code actions',
-      \}
+let g:leader_key_map.c = { 'name': 'code actions' }
 
 " Commenting/uncommenting
 xmap <c-_> <Plug>Commentary
 omap <c-_> <Plug>Commentary
 nmap <c-_> <Plug>CommentaryLine
-let g:leader_key_map.c['/'] = ['<c-_>', 'Comment/uncomment']
+let g:leader_key_map.c['/'] = ['<c-_>', 'comment/uncomment']
 
 " Hover
 let g:leader_key_map.c.c = [":call CocActionAsync('doHover')", 'Hover']
 
 " Go to definition
 nmap <silent> gd <Plug>(coc-definition)
-let g:leader_key_map.c.d = ["<Plug>(coc-definition)", 'Go to definition']
+let g:leader_key_map.c.d = ["<Plug>(coc-definition)", 'go to definition']
 
 " Rename symbol
-let g:leader_key_map.c.n = ['<Plug>(coc-rename)', 'Rename symbol']
+let g:leader_key_map.c.n = ['<Plug>(coc-rename)', 'rename symbol']
 
 " Format
 command! -nargs=0 Format :call CocActionAsync('format')
-let g:leader_key_map.c.f = [':Format', 'Format']
+let g:leader_key_map.c.f = [':Format', 'format']
 
 " }}}
 
 " Group: running commands {{{
 
-let g:leader_key_map.r = {
-      \ 'name': 'run commands',
-      \}
+let g:leader_key_map.r = { 'name': 'run' }
 
-let g:leader_key_map.r.c = [':VimuxPromptCommand', 'Run a new command']
+let g:leader_key_map.r.c = [':VimuxPromptCommand', 'run new command']
 
 map <Leader>rf :lua tmux.run_current_buffer()<CR>
+let g:leader_key_map.r.f = 'run current buffer'
 
 map <Leader>r. :lua tmux.run_last_command()<CR>
-
+let g:leader_key_map.r['.'] = 'run last command'
 
 " }}}
 
 " Group: find/search {{{
 
-let g:leader_key_map.f = {
-      \ 'name': 'find things',
-      \}
+let g:leader_key_map.f = { 'name': 'find' }
 
 xmap <c-p> :Clap files<CR>
 omap <c-p> :Clap files<CR>
 nmap <c-p> :Clap files<CR>
-let g:leader_key_map.f.f = [':Clap files', 'Find file by name']
+let g:leader_key_map.f.f = [':Clap files', 'find file by name']
 
-let g:leader_key_map.f.c = [':Clap command', 'Find command by name']
+let g:leader_key_map.f.c = [':Clap command', 'find command by name']
 
-let g:leader_key_map.f.h = [':Clap history', 'Find in file history']
+let g:leader_key_map.f.h = [':Clap history', 'find in file history']
 
-let g:leader_key_map.f.s = [':Clap grep', 'Find in files']
+let g:leader_key_map.f.s = [':Clap grep', 'find in files']
+
+" }}}
+
+" Group: git {{{
+
+let g:leader_key_map.g = { 'name': 'git' }
+
+let g:leader_key_map.g.p = [':GitGutterPreviewHunk', 'preview hunk at cursor']
+
+let g:leader_key_map.g.u = [':GitGutterUndoHunk', 'undo hunk at cursor']
 
 " }}}
 
 " Group: vim config {{{
 
-let g:leader_key_map.v = {
-      \ 'name': 'vim',
-      \}
+let g:leader_key_map.v = { 'name': 'vim' }
 
-let g:leader_key_map.v.r = [':ReloadConfig', 'Reload vim config']
+let g:leader_key_map.v.r = [':ReloadConfig', 'reload vim config']
 
 " }}}

@@ -13,6 +13,10 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Fuzzy-find in floating window
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 let g:clap_layout = { 'relative': 'editor' }
+let g:clap_disable_run_rooter = v:true
+let g:clap_no_matches_msg = 'No matches.'
+let g:clap_selected_sign = { 'text': '*', 'texthl': 'ClapSelectedSign', 'linehl': 'ClapSelected' }
+let g:clap_current_selection_sign = { 'text': '►', 'texthl': 'ClapCurrentSelectionSign', 'linehl': 'ClapCurrentSelection' }
 
 " Adds commands for working with surrounding characters
 Plug 'tpope/vim-surround'
@@ -74,6 +78,7 @@ fun! s:UpdateAllPlugins()
         \ coc-eslint
         \ coc-html
         \ coc-json
+        \ coc-lua
         \ coc-python
         \ coc-rls
         \ coc-solargraph
