@@ -42,9 +42,21 @@ local function run_command(cmd)
   end
 end
 
+local function run_last_command()
+  if not last_command then
+    api.nvim_err_writeln('No last command to run')
+    return
+  end
+
+  run_command(last_command)
+end
+
 local filetype_runners = {
   javascript = function(bufname)
     run_command('node ' .. bufname)
+  end,
+  ruby = function(bufname)
+    run_command('ruby ' .. bufname)
   end,
 }
 
@@ -60,15 +72,6 @@ local function run_current_buffer()
   local buffer_name = api.nvim_buf_get_name(0)
 
   runner(buffer_name)
-end
-
-local function run_last_command()
-  if not last_command then
-    api.nvim_err_writeln('No last command to run')
-    return
-  end
-
-  run_command(last_command)
 end
 
 return {
