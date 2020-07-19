@@ -9,6 +9,7 @@ let s:bold_italic = "bold,italic"
 let s:bold_underline = "bold,underline"
 
 " Color palette
+let s:black = "#090920"
 let s:light_gray = "#2e2f4f"
 let s:dark_gray = "#75718e"
 let s:white = "#f8f8f8"
@@ -33,7 +34,10 @@ call s:Hi("NormalFloat", s:white, s:light_gray, s:off)
 call s:Hi("NonText", s:dark_gray, s:off, s:off)
 
 " The ~ at the end of files
-call s:Hi("EndOfBuffer", s:dark_gray, s:off, s:off)
+call s:Hi("EndOfBuffer", s:black, s:off, s:off)
+
+" Error messages in output
+call s:Hi("ErrorMsg", s:red, s:off, s:off)
 
 " Cursor & selection
 call s:Hi("Cursor", s:orange, s:light_gray, s:off)

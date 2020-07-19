@@ -30,6 +30,11 @@ Plug 'tpope/vim-eunuch'
 
 " Git integration
 Plug 'airblade/vim-gitgutter'
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '┃'
+let g:gitgutter_sign_removed = '┃'
+let g:gitgutter_sign_removed_first_line = '┃'
+let g:gitgutter_sign_modified_removed = '┃'
 
 " A bunch of color schemes
 Plug 'chriskempson/base16-vim'
