@@ -130,6 +130,12 @@ highlight_dark({
   ClapFuzzyMatches11 = { fg = light_orange, style = bold },
   ClapFuzzyMatches12 = { fg = light_orange, style = bold },
 
+  -- Leader key display
+  WhichKey = { fg = purple },
+  WhichKeyGroup = { fg = light_orange },
+  WhichKeySeparator = { fg = green },
+  WhichKeyDesc = { fg = white },
+
   -- Syntax
   Conditional = { fg = purple },
   Constant = { fg = orange },

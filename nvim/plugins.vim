@@ -44,6 +44,7 @@ let g:gitgutter_sign_modified_removed = '┃'
 
 " Provides help menu for shortcut keys
 Plug 'liuchengxu/vim-which-key'
+let g:which_key_disable_default_offset = 1
 
 " Highlight yanked text briefly
 Plug 'machakann/vim-highlightedyank'

@@ -30,7 +30,7 @@ nmap <c-_> <Plug>CommentaryLine
 let g:leader_key_map.c['/'] = ['<c-_>', 'comment/uncomment']
 
 " Hover
-let g:leader_key_map.c.c = [":call CocActionAsync('doHover')", 'Hover']
+let g:leader_key_map.c.c = [":call CocActionAsync('doHover')", 'hover']
 
 " Go to definition
 nmap <silent> gd <Plug>(coc-definition)
