@@ -8,3 +8,8 @@ runtime languages.vim
 runtime utils.vim
 runtime bindings.vim
 
+lua package.loaded.helpers = nil
+lua require('helpers')
+
+lua package.loaded.tmux_runner = nil
+lua tmux = require('tmux_runner')

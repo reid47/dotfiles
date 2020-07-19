@@ -25,14 +25,14 @@ Plug 'tpope/vim-abolish'
 " Commenting/uncommenting
 Plug 'tpope/vim-commentary'
 
+" Adds commands like :Move, :Delete, :Mkdir, etc.
+Plug 'tpope/vim-eunuch'
+
 " Git integration
 Plug 'airblade/vim-gitgutter'
 
 " Navigation between Vim and Tmux
 Plug 'christoomey/vim-tmux-navigator'
-
-" Send commands to Tmux from Vim
-Plug 'benmills/vimux'
 
 " A bunch of color schemes
 Plug 'chriskempson/base16-vim'

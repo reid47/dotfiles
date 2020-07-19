@@ -55,7 +55,10 @@ let g:leader_key_map.r = {
 
 let g:leader_key_map.r.c = [':VimuxPromptCommand', 'Run a new command']
 
-let g:leader_key_map.r['.'] = [':VimuxRunLastCommand', 'Re-run last command']
+map <Leader>rf :lua tmux.run_current_buffer()<CR>
+
+map <Leader>r. :lua tmux.run_last_command()<CR>
+
 
 " }}}
 
