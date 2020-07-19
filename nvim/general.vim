@@ -63,7 +63,7 @@ fun! s:AutoSave()
     return
   endif
 
-  if bufname() == ""
+  if bufname() == "" || !&modifiable
     return
   endif
 
