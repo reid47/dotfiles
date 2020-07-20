@@ -47,3 +47,16 @@ augroup END
 
 " }}}
 
+" Language: homescreen {{{
+
+augroup config#homescreen
+  au!
+  au FileType homescreen setlocal
+    \ nocursorline
+    \ nocursorcolumn
+    \ nonumber
+    \ norelativenumber
+augroup END
+
+" }}}
+
