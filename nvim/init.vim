@@ -3,19 +3,22 @@ scriptencoding utf-8
 runtime plugins.vim
 runtime general.vim
 runtime appearance.vim
-runtime homescreen.vim
 runtime languages.vim
 runtime utils.vim
 runtime bindings.vim
 
-lua package.loaded.helpers = nil
-lua require('helpers')
+lua << EOF
 
-lua package.loaded.colorscheme_reid = nil
-lua require('colorscheme_reid')
+package.loaded.helpers = nil
+require('helpers')
 
-lua package.loaded.tmux_runner = nil
-lua tmux = require('tmux_runner')
+package.loaded.colorscheme_reid = nil
+require('colorscheme_reid')
 
-lua package.loaded.home = nil
-lua home = require('home')
+package.loaded.tmux_runner = nil
+tmux = require('tmux_runner')
+
+package.loaded.home = nil
+home = require('home')
+
+EOF
