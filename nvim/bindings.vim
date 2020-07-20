@@ -59,22 +59,22 @@ let g:leader_key_map.r['.'] = 'run last command'
 
 " }}}
 
-" Group: find/search {{{
+" Group: search {{{
 
-let g:leader_key_map.f = { 'name': 'find' }
+let g:leader_key_map.s = { 'name': 'search' }
 
 xmap <c-p> :Clap files<CR>
 omap <c-p> :Clap files<CR>
 nmap <c-p> :Clap files<CR>
-let g:leader_key_map.f.f = [':Clap files', 'find file by name']
+let g:leader_key_map.s.f = [':Clap files', 'search files by name']
 
-let g:leader_key_map.f.c = [':Clap command', 'find command by name']
+let g:leader_key_map.s.c = [':Clap command', 'find command by name']
 
-let g:leader_key_map.f.h = [':Clap history', 'find in file history']
+let g:leader_key_map.s.h = [':Clap history', 'find in file history']
 
-let g:leader_key_map.f.s = [':Clap grep', 'find in files']
+let g:leader_key_map.s.g = [':Clap grep', 'search in files']
 
-let g:leader_key_map.f.y = [':Clap yanks', 'find in yanks']
+let g:leader_key_map.s.y = [':Clap yanks', 'search yanks']
 
 " }}}
 
