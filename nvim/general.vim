@@ -41,9 +41,6 @@ let g:netrw_winsize = 16
 let g:netrw_list_hide = '\.git$'
 let g:netrw_hide = 1
 
-" Set the prompt shown when entering a command
-let g:VimuxPromptString = "command: "
-
 " Auto-save {{{
 
 " Runs :update at interval specified by updatetime setting.

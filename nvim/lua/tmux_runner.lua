@@ -52,8 +52,17 @@ local filetype_runners = {
   javascript = function(bufname)
     run_command('node ' .. bufname)
   end,
+
+  lua = function(bufname)
+    api.nvim_command('luafile ' .. bufname)
+  end,
+
   ruby = function(bufname)
     run_command('ruby ' .. bufname)
+  end,
+
+  sh = function(bufname)
+    run_command(bufname)
   end,
 }
 
