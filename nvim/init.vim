@@ -16,3 +16,6 @@ lua require('colorscheme_reid')
 
 lua package.loaded.tmux_runner = nil
 lua tmux = require('tmux_runner')
+
+lua package.loaded.home = nil
+lua home = require('home')

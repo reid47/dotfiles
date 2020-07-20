@@ -31,6 +31,9 @@ set fillchars+=vert:\│ " Char for vertical split column (does this work??)
 
 autocmd InsertLeave * set nopaste " see: https://github.com/neovim/neovim/issues/7994
 
+" Show home screen on startup
+autocmd VimEnter * lua home.show_home_screen()
+
 " File explorer (netrw)
 let g:netrw_dirhistmax = 0 " Do not save history or bookmarks (no .netrwhist file)
 let g:netrw_banner = 0 " Turn off banner
