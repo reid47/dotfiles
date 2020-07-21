@@ -49,9 +49,10 @@ let g:leader_key_map.c.f = [':Format', 'format']
 
 let g:leader_key_map.r = { 'name': 'run' }
 
-let g:leader_key_map.r.c = [':VimuxPromptCommand', 'run new command']
+map <leader>rc :lua tmux.run_command()<cr>
+let g:leader_key_map.r.c = 'run new command'
 
-map <Leader>rf :lua tmux.run_current_buffer()<CR>
+map <leader>rf :lua tmux.run_current_buffer()<cr>
 let g:leader_key_map.r.f = 'run current buffer'
 
 map <Leader>r. :lua tmux.run_last_command()<CR>

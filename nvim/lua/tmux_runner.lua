@@ -12,6 +12,13 @@ local function send_keys(keys)
   })
 end
 
+local function get_input(prompt)
+  api.nvim_call_function('inputsave', {})
+  local input = api.nvim_call_function('input', { prompt })
+  api.nvim_call_function('inputrestore', {})
+  return input
+end
+
 local function find_pane()
   if pane_index then return true end
 
@@ -30,7 +37,7 @@ local function find_pane()
   return false
 end
 
-local function run_command(cmd)
+local function run_in_terminal(cmd)
   if find_pane() then
     last_command = cmd
 
@@ -45,12 +52,12 @@ local function run_last_command()
     return
   end
 
-  run_command(last_command)
+  run_in_terminal(last_command)
 end
 
 local filetype_runners = {
   javascript = function(bufname)
-    run_command('node ' .. bufname)
+    run_in_terminal('node ' .. bufname)
   end,
 
   lua = function(bufname)
@@ -58,13 +65,25 @@ local filetype_runners = {
   end,
 
   ruby = function(bufname)
-    run_command('ruby ' .. bufname)
+    run_in_terminal('ruby ' .. bufname)
+  end,
+
+  python = function(bufname)
+    run_in_terminal('python ' .. bufname)
   end,
 
   sh = function(bufname)
-    run_command(bufname)
+    run_in_terminal(bufname)
   end,
 }
+
+local function run_command()
+  local cmd = get_input('command: ')
+
+  if #cmd > 0 then
+    run_in_terminal(cmd)
+  end
+end
 
 local function run_current_buffer()
   local filetype = api.nvim_buf_get_option(0, 'filetype')
