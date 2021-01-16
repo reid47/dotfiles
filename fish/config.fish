@@ -2,6 +2,7 @@ alias vim nvim
 alias cls clear
 alias gco "git checkout"
 alias gst "git status"
+alias gap "git add -p"
 
 # Make tmux behave kinda like vim
 alias :q exit
