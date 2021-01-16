@@ -6,6 +6,18 @@
   ci = commit
   co = checkout
   st = status
+  cp = cherry-pick
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [core]
   editor = nvim
+
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[commit]
+  verbose = true
