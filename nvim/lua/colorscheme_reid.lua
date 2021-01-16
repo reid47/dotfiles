@@ -112,7 +112,7 @@ highlight_dark({
   -- Comments & folds
   Comment = { fg = light_gray },
   Todo = { fg = yellow, style = bold },
-  Folded = { fg = light_gray, style = bold_italic },
+  Folded = { fg = light_gray, style = italic },
 
   -- Clap (fuzzy finder window)
   ClapPreview = { bg = gray },

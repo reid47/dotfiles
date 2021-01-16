@@ -25,6 +25,9 @@ Plug 'tpope/vim-surround'
 " Enhances file tree (netrw)
 Plug 'tpope/vim-vinegar'
 
+" NERDtree file explorer
+Plug 'preservim/nerdtree'
+
 " Helpers for finding/replacing patterns
 Plug 'tpope/vim-abolish'
 

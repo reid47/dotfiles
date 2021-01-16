@@ -96,3 +96,12 @@ let g:leader_key_map.v = { 'name': 'vim' }
 let g:leader_key_map.v.r = [':ReloadConfig', 'reload vim config']
 
 " }}}
+
+" Group: window {{{
+
+let g:leader_key_map.w = { 'name': 'window' }
+
+nmap <c-j> :NERDTreeToggle<CR>
+let g:leader_key_map.w.j = [':NERDTreeToggle', 'toggle file explorer']
+
+" }}}
