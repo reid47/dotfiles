@@ -16,6 +16,8 @@ set -gx EDITOR nvim
 set -gx GIT_EDITOR nvim
 set -gx GOPATH $HOME/code/go
 
+set -Ux N_PREFIX $HOME/n/
+
 set -gx PATH /usr/local/bin $PATH
 set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
@@ -23,6 +25,7 @@ set -gx PATH $PATH /usr/local/mysql/bin
 set -gx PATH $PATH /usr/local/go/bin $GOPATH/bin
 set -gx PATH $PATH $HOME/.cabal/bin
 set -gx PATH $PATH $HOME/.ghcup/bin
+set -gx PATH $PATH $HOME/n/bin
 
 # Remove default greeting
 set -gx fish_greeting ""
@@ -37,5 +40,3 @@ set -gx fish_color_param blue
 set -gx fish_color_comment "#75715e"
 set -gx fish_pager_color_description yellow
 set -gx fish_pager_color_progress white --bold --background=blue
-
-set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths

@@ -52,6 +52,7 @@ brew_install_or_upgrade jq jq
 brew_install_or_upgrade bat bat
 brew_install_or_upgrade fd fd
 brew_install_or_upgrade fzf fzf
+brew_install_or_upgrade n n
 
 log "Installing fish plugins..."
 fish "$dir/fish/install.fish"
