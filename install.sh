@@ -53,6 +53,7 @@ brew_install_or_upgrade bat bat
 brew_install_or_upgrade fd fd
 brew_install_or_upgrade fzf fzf
 brew_install_or_upgrade n n
+brew_install_or_upgrade exa exa
 
 log "Installing fish plugins..."
 fish "$dir/fish/install.fish"

@@ -1,3 +1,7 @@
+alias ls exa
+alias la "exa -la"
+alias tree "exa -T"
+
 alias vim nvim
 alias cls clear
 alias gco "git checkout"
