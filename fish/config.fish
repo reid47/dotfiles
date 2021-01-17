@@ -1,9 +1,13 @@
-alias ls exa
+alias ls "exa"
 alias la "exa -la"
+alias lam "exa -la --sort modified --reverse"
 alias tree "exa -T"
 
-alias vim nvim
-alias cls clear
+alias v "nvim"
+alias vim "nvim"
+alias cls "clear"
+
+alias g "git"
 alias gco "git checkout"
 alias gst "git status"
 alias gap "git add -p"
@@ -12,7 +16,7 @@ alias ganp "git add -N . && git add -p"
 alias gpr "git pull -r"
 
 # Make tmux behave kinda like vim
-alias :q exit
+alias :q "exit"
 alias :vsp "tmux split-window -h"
 alias :sp "tmux split-window -v"
 
