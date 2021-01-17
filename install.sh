@@ -29,7 +29,7 @@ ln -sfv $dir/nvim/ $HOME/.config
 ln -sfv $dir/fish/ $HOME/.config
 
 log "Installing vim plugins..."
-nvim +UpdateAllPlugins +qall
+nvim --headless +UpdateAllPlugins +qall
 
 log "Downloading z to ~/z.sh..."
 curl https://raw.githubusercontent.com/rupa/z/master/z.sh -s -o $HOME/z.sh
