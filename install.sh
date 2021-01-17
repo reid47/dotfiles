@@ -51,3 +51,4 @@ brew_install_or_upgrade rg ripgrep
 brew_install_or_upgrade jq jq
 brew_install_or_upgrade bat bat
 brew_install_or_upgrade fd fd
+brew_install_or_upgrade fzf fzf
