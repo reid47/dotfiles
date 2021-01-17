@@ -95,6 +95,8 @@ let g:leader_key_map.v = { 'name': 'vim' }
 
 let g:leader_key_map.v.r = [':ReloadConfig', 'reload vim config']
 
+let g:leader_key_map.v.p = [':UpdateAllPlugins', 'update all plugins']
+
 " }}}
 
 " Group: window {{{
