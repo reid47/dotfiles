@@ -10,6 +10,9 @@
   cp = cherry-pick
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  forget = rm --cached
+  leaderboard = shortlog -s -n
+  alias = config --get-regexp alias
 
 [core]
   editor = nvim
