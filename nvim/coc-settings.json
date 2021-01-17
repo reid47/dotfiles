@@ -20,5 +20,6 @@
       }
     }
   },
-  "coc.preferences.extensionUpdateCheck": "never"
+  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "go", "rust", "javascript", "typescript", "json"]
 }
