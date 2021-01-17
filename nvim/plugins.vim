@@ -28,6 +28,7 @@ Plug 'tpope/vim-vinegar'
 " NERDtree file explorer
 Plug 'preservim/nerdtree'
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
 " Helpers for finding/replacing patterns
 Plug 'tpope/vim-abolish'
