@@ -37,13 +37,16 @@ log_done
 
 if [ -z "$SKIP_DEPS" ]; then
   brew_install_or_upgrade() {
-    if ! command_exists $1; then
-      log "Installing $1..."
-      brew install $2
+    cmd_name="$1"
+    brew_name="${2:-$cmd_name}"
+
+    if ! command_exists $cmd_name; then
+      log "Installing $brew_name..."
+      brew install $brew_name
       log_done
     else
-      log "Upgrading $1..."
-      brew upgrade $2 || true
+      log "Upgrading $brew_name..."
+      brew upgrade $brew_name || true
       log_done
     fi
   }
@@ -58,13 +61,13 @@ if [ -z "$SKIP_DEPS" ]; then
     log_done
   fi
 
-  brew_install_or_upgrade nvim nvim
+  brew_install_or_upgrade nvim
   brew_install_or_upgrade rg ripgrep
-  brew_install_or_upgrade jq jq
-  brew_install_or_upgrade bat bat
-  brew_install_or_upgrade fd fd
-  brew_install_or_upgrade fzf fzf
-  brew_install_or_upgrade n n
-  brew_install_or_upgrade exa exa
-  brew_install_or_upgrade gh gh
+  brew_install_or_upgrade jq
+  brew_install_or_upgrade bat
+  brew_install_or_upgrade fd
+  brew_install_or_upgrade fzf
+  brew_install_or_upgrade n
+  brew_install_or_upgrade exa
+  brew_install_or_upgrade gh
 fi
