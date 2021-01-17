@@ -3,6 +3,8 @@ alias cls clear
 alias gco "git checkout"
 alias gst "git status"
 alias gap "git add -p"
+alias gan "git add -AN"
+alias ganp "git add -N . && git add -p"
 alias gpr "git pull -r"
 
 # Make tmux behave kinda like vim

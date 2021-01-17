@@ -3,6 +3,7 @@
   email = reidmitchell1@gmail.com
 
 [alias]
+  an = add -N --all
   ci = commit
   co = checkout
   st = status
