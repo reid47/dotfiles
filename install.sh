@@ -30,8 +30,9 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 log_done
 
-log "Running fish setup script..."
-fish "$dir/fish/install.fish"
+log "Setting up fish shell..."
+grep "/usr/local/bin/fish" /etc/shells || echo "/usr/local/bin/fish" >> /etc/shells
+dscl . -read ~/ UserShell | grep "/usr/local/bin/fish" || chsh -s "/usr/local/bin/fish"
 log_done
 
 if [ -z "$SKIP_DEPS" ]; then
