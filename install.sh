@@ -15,8 +15,6 @@ command_exists() {
 }
 
 log "Linking config files..."
-ln -sfv $dir/bashrc $HOME/.bashrc
-ln -sfv $dir/bash_profile $HOME/.bash_profile
 ln -sfv $dir/gitconfig $HOME/.gitconfig
 ln -sfv $dir/tmux.conf $HOME/.tmux.conf
 ln -sfv $dir/nvim/ $HOME/.config
