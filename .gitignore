@@ -2,6 +2,7 @@ node_modules
 ignored
 
 .DS_Store
+./fish/fish_variables
 
 # Coc
 /nvim/coc/*

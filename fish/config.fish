@@ -35,5 +35,7 @@ set -gx fish_color_param blue
 set -gx fish_color_comment "#75715e"
 set -gx fish_pager_color_description yellow
 set -gx fish_pager_color_progress white --bold --background=blue
+
 set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
 
+set -g fish_function_paths $HOME/.fisher $fish_function_paths
