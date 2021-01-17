@@ -35,7 +35,7 @@ log "Downloading z to ~/z.sh..."
 curl https://raw.githubusercontent.com/rupa/z/master/z.sh -s -o $HOME/z.sh
 
 log "Configuring iTerm2..."
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir/com.googlecode.iterm2.plist"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 if ! command_exists brew; then
