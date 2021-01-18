@@ -1,12 +1,14 @@
+alias v "nvim"
+alias vim "nvim"
+alias cls "clear"
+
+# Using exa for file browsing
 alias ls "exa"
 alias la "exa -la"
 alias lam "exa -la --sort modified --reverse"
 alias tree "exa -T"
 
-alias v "nvim"
-alias vim "nvim"
-alias cls "clear"
-
+# Some git aliases
 alias g "git"
 alias gco "git checkout"
 alias gst "git status"
