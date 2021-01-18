@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# when run inside a git repo, opens the remote in a browser (e.g. the github page)
+
+remote=$(git remote -v \
+  | grep fetch \
+  | awk '{ print $2 }' \
+  | sed -e "s/\.git$//" -e "s/^git@/https:\/\//" -e "s/\.com:/\.com\//"
+)
+
+if [ -z "$remote" ]; then
+  echo "No remote found."
+  exit 1
+fi
+
+echo "Opening $remote..."
+
+open $remote

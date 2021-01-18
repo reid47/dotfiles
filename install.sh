@@ -71,3 +71,10 @@ if [ -z "$SKIP_DEPS" ]; then
   brew_install_or_upgrade exa
   brew_install_or_upgrade gh
 fi
+
+log "Linking scripts..."
+for script in `fd -t x . scripts/ -a`; do
+  script_name=$(basename "$script")
+  ln -sv "$script" "/usr/local/bin/$script_name"
+done
+log_done
