@@ -70,6 +70,7 @@ if [ -z "$SKIP_DEPS" ]; then
   brew_install_or_upgrade n
   brew_install_or_upgrade exa
   brew_install_or_upgrade gh
+  brew_install_or_upgrade tldr
 fi
 
 log "Linking scripts..."
