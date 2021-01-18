@@ -1,0 +1,9 @@
+#!/bin/bash
+
+note_dir="$HOME/.notes"
+topic=${1:-daily}
+date=$(date +%Y-%m-%d)
+
+mkdir -p "$note_dir/$topic"
+
+nvim +"cd $note_dir" "$note_dir/$topic/$date.md"
