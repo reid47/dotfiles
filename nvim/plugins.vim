@@ -30,6 +30,7 @@ Plug 'preservim/nerdtree'
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeStatusline=' '
+let NERDTreeIgnore=['\.git$', '\.history$']
 
 " Helpers for finding/replacing patterns
 Plug 'tpope/vim-abolish'
