@@ -87,6 +87,10 @@ let g:leader_key_map.g.p = [':GitGutterPreviewHunk', 'preview hunk at cursor']
 
 let g:leader_key_map.g.u = [':GitGutterUndoHunk', 'undo hunk at cursor']
 
+let g:leader_key_map.g['['] = [':GitGutterPrevHunk', 'jump to previous hunk']
+
+let g:leader_key_map.g[']'] = [':GitGutterNextHunk', 'jump to next hunk']
+
 " }}}
 
 " Group: vim config {{{
