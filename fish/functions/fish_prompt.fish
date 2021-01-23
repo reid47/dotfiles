@@ -5,7 +5,7 @@ function print_git_info
     set -l git_status (git status -s)
 
     if test -n "$git_status"
-      set_color red
+      set_color yellow
     else
       set_color normal
     end
@@ -15,13 +15,20 @@ function print_git_info
 end
 
 function fish_prompt
+  set -l previous_exit_code $status
+
   set_color green
   printf '\n%s' (pwd | string replace $HOME "~")
 
-  printf '%s\n' (print_git_info)
+  printf '%s' (print_git_info)
+
+  if test $previous_exit_code -ne 0
+    set_color red
+    printf ' (exited %s)' $previous_exit_code
+  end
 
   set_color blue
-  printf '$ '
+  printf '\n$ '
 
   set_color normal
 end
