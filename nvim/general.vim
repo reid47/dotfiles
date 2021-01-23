@@ -34,8 +34,8 @@ autocmd InsertLeave * set nopaste " see: https://github.com/neovim/neovim/issues
 " Show home screen on startup
 autocmd VimEnter * lua home.show_home_screen()
 
-" Detect .ts/.tsx files as typescript
-autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+" Detect .js/.jsx/.ts/.tsx files as typescript
+autocmd BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx setlocal filetype=typescript
 
 " File explorer (netrw)
 let g:netrw_dirhistmax = 0 " Do not save history or bookmarks (no .netrwhist file)
