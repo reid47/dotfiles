@@ -61,6 +61,7 @@ if [ -z "$SKIP_DEPS" ]; then
     log_done
   fi
 
+  brew_install_or_upgrade python
   brew_install_or_upgrade nvim
   brew_install_or_upgrade rg ripgrep
   brew_install_or_upgrade jq
@@ -71,6 +72,7 @@ if [ -z "$SKIP_DEPS" ]; then
   brew_install_or_upgrade exa
   brew_install_or_upgrade gh
   brew_install_or_upgrade tldr
+  brew_install_or_upgrade httpie
 fi
 
 log "Linking scripts..."
