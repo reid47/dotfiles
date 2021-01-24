@@ -75,6 +75,10 @@ let g:leader_key_map.s.h = [':Clap history', 'find in file history']
 
 let g:leader_key_map.s.g = [':Clap grep', 'search in files']
 
+let g:leader_key_map.s.l = [':Clap lines', 'search lines of current file']
+
+let g:leader_key_map.s.o = [':CocList outline', 'search outline of current file']
+
 let g:leader_key_map.s.y = [':Clap yanks', 'search yanks']
 
 " }}}
