@@ -10,8 +10,8 @@ nnoremap <silent><nowait> <leader> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent><nowait> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 call which_key#register('<Space>', "g:leader_key_map")
 
-" Escape to clear search highlight
-nnoremap <esc> :noh<return><esc>
+" Escape to clear search highlight & update git signs
+nnoremap <silent><esc> :noh <bar> :GitGutter<return><esc>
 
 " Tab/shift+tab to indent/unindent
 vnoremap > >gv
