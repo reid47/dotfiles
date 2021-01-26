@@ -23,23 +23,20 @@ vnoremap <S-Tab> <gv
 
 let g:leader_key_map.c = { 'name': 'code actions' }
 
-" Commenting/uncommenting
 xmap <c-_> <Plug>Commentary
 omap <c-_> <Plug>Commentary
 nmap <c-_> <Plug>CommentaryLine
 let g:leader_key_map.c['/'] = ['<c-_>', 'comment/uncomment']
 
-" Hover
+let g:leader_key_map.c.a = [":CocAction", 'open action menu']
+
 let g:leader_key_map.c.c = [":call CocActionAsync('doHover')", 'hover']
 
-" Go to definition
 nmap <silent> gd <Plug>(coc-definition)
 let g:leader_key_map.c.d = ["<Plug>(coc-definition)", 'go to definition']
 
-" Rename symbol
 let g:leader_key_map.c.n = ['<Plug>(coc-rename)', 'rename symbol']
 
-" Format
 command! -nargs=0 Format :call CocActionAsync('format')
 let g:leader_key_map.c.f = [':Format', 'format']
 
