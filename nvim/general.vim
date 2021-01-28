@@ -37,6 +37,9 @@ autocmd VimEnter * lua home.show_home_screen()
 " Detect .js/.jsx/.ts/.tsx files as typescript
 autocmd BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx setlocal filetype=typescript
 
+" Check for external changes to buffers (triggers autoread)
+autocmd FocusGained,BufEnter * :silent checktime
+
 " File explorer (netrw)
 let g:netrw_dirhistmax = 0 " Do not save history or bookmarks (no .netrwhist file)
 let g:netrw_banner = 0 " Turn off banner
