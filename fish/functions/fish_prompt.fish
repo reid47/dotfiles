@@ -1,4 +1,4 @@
-function print_git_info
+function __print_git_info
   set -l branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
   if test -n "$branch"
@@ -14,21 +14,24 @@ function print_git_info
   end
 end
 
-function fish_prompt
+function __print_stuff_before_prompt --on-event fish_prompt
   set -l previous_exit_code $status
 
   set_color green
   printf '\n%s' (pwd | string replace $HOME "~")
 
-  printf '%s' (print_git_info)
+  printf '%s' (__print_git_info)
 
   if test $previous_exit_code -ne 0
     set_color red
     printf ' (exited %s)' $previous_exit_code
   end
 
-  set_color blue
-  printf '\n$ '
+  printf '\n'
+end
 
+function fish_prompt
+  set_color blue
+  printf '$ '
   set_color normal
 end
