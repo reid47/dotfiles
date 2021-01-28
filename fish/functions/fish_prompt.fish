@@ -14,7 +14,7 @@ function __print_git_info
   end
 end
 
-function __print_stuff_before_prompt --on-event fish_prompt
+function fish_prompt
   set -l previous_exit_code $status
 
   set_color green
@@ -24,14 +24,11 @@ function __print_stuff_before_prompt --on-event fish_prompt
 
   if test $previous_exit_code -ne 0
     set_color red
-    printf ' (exited %s)' $previous_exit_code
+    printf ' (%s)' $previous_exit_code
   end
 
-  printf '\n'
-end
-
-function fish_prompt
   set_color blue
-  printf '$ '
+  printf '\n$ '
+
   set_color normal
 end
