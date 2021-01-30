@@ -3,6 +3,8 @@ function __print_git_info
 
   if test -n "$branch"
     set -l git_status (git status -s)
+    set -l git_counts (git rev-list --left-right --count $branch...origin/$branch || '')
+    set -l formatted_counts (echo $git_counts | awk '{ print ($1 == "0" ? "" : " +"$1) ($2 == "0" ? "" : " -"$2) }')
 
     if test -n "$git_status"
       set_color yellow
@@ -10,7 +12,7 @@ function __print_git_info
       set_color normal
     end
 
-    printf ' (%s)' $branch
+    printf ' (%s%s)' $branch $formatted_counts
   end
 end
 
