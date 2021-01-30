@@ -1,10 +1,10 @@
 function __print_git_info
-  set -l branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  set -l branch (git symbolic-ref --short HEAD 2> /dev/null)
 
   if test -n "$branch"
     set -l git_status (git status -s)
-    set -l git_counts (git rev-list --left-right --count $branch...origin/$branch || '')
-    set -l formatted_counts (echo $git_counts | awk '{ print ($1 == "0" ? "" : " +"$1) ($2 == "0" ? "" : " -"$2) }')
+    set -l git_counts (git rev-list --left-right --count $branch...origin/$branch 2> /dev/null || echo '')
+    set -l formatted_counts (echo $git_counts | awk '{ print ($1 > 0 ? " +"$1 : "") ($2 > 0 ? " -"$2 : "") }')
 
     if test -n "$git_status"
       set_color yellow
