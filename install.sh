@@ -17,8 +17,8 @@ command_exists() {
 log "Linking config files..."
 ln -sfv $dir/gitconfig $HOME/.gitconfig
 ln -sfv $dir/tmux.conf $HOME/.tmux.conf
-ln -sfv $dir/nvim/ $HOME/.config
-ln -sfv $dir/fish/ $HOME/.config
+ln -sfv $dir/nvim/ $HOME/.config/nvim
+ln -sfv $dir/fish/ $HOME/.config/fish
 log_done
 
 log "Installing vim plugins..."
