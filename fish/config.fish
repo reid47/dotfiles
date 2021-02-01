@@ -16,6 +16,7 @@ alias gap "git add -p"
 alias gan "git add -AN"
 alias ganp "git add -N . && git add -p"
 alias gpr "git pull -r"
+alias gf "git fetch"
 
 # Make tmux behave kinda like vim
 alias :q "exit"
