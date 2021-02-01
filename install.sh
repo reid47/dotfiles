@@ -67,6 +67,7 @@ if [ -z "$SKIP_DEPS" ]; then
   brew_install_or_upgrade jq
   brew_install_or_upgrade bat
   brew_install_or_upgrade fd
+  brew_install_or_upgrade fish
   brew_install_or_upgrade fzf
   brew_install_or_upgrade n
   brew_install_or_upgrade exa
